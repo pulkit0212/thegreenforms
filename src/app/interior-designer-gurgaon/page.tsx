@@ -50,7 +50,7 @@ export default function InteriorDesignerGurgaon() {
                         <br />
                         <span className="italic text-gold">in Gurgaon</span>
                     </h1>
-                    <p className="mt-6 md:mt-8 font-body text-base md:text-lg text-sand/70 max-w-xl mx-auto leading-relaxed">
+                    <p className="mt-6 md:mt-8 font-body text-base md:text-lg text-white/85 max-w-xl mx-auto leading-relaxed">
                         Transforming modern apartments, penthouses, and commercial spaces
                         across Gurgaon and Delhi NCR with design that commands attention
                         and exudes refinement.
@@ -85,7 +85,7 @@ export default function InteriorDesignerGurgaon() {
                     <h2 className="font-display text-3xl md:text-5xl text-ivory mb-6">
                         Let&apos;s Design Your Dream Interior in Gurgaon
                     </h2>
-                    <p className="font-body text-base text-sand/60 max-w-lg mx-auto leading-relaxed mb-10">
+                    <p className="font-body text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-10">
                         From DLF Phase V penthouses to Golf Course Road offices, we craft
                         interiors that reflect the ambition and sophistication of
                         Millennium City.

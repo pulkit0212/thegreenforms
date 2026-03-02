@@ -83,13 +83,13 @@ export default function Services() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="group p-10 md:p-12 bg-white/60 border border-sand/40 hover:border-gold/30 transition-colors duration-500 cursor-default"
             >
-              <div className="text-warmgray group-hover:text-gold transition-colors duration-500 mb-8">
+              <div className="text-forest group-hover:text-gold transition-colors duration-500 mb-8">
                 {iconMap[service.icon]}
               </div>
               <h3 className="font-display text-xl md:text-2xl text-softblack mb-4">
                 {service.title}
               </h3>
-              <p className="font-body text-sm text-charcoal/60 leading-relaxed">
+              <p className="font-body text-sm text-softblack/75 leading-relaxed">
                 {service.shortDesc}
               </p>
             </motion.div>

@@ -9,7 +9,7 @@ export default function NotFound() {
             <h1 className="font-display text-6xl md:text-8xl text-softblack mb-6">
                 404
             </h1>
-            <p className="font-body text-base text-charcoal/60 max-w-md leading-relaxed mb-10">
+            <p className="font-body text-base text-softblack/75 max-w-md leading-relaxed mb-10">
                 The page you&apos;re looking for doesn&apos;t exist or has been moved.
                 Let us guide you back.
             </p>

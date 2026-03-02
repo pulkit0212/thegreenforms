@@ -137,11 +137,11 @@ export default function ContactPageClient() {
   };
 
   const inputCls =
-    "w-full bg-white border border-sand/60 px-5 py-3.5 font-body text-sm text-charcoal placeholder:text-warmgray/50 tracking-wide focus:outline-none focus:border-gold/50 transition-colors duration-300";
+    "w-full bg-white border border-sand/60 px-5 py-3.5 font-body text-sm text-softblack placeholder:text-softblack/40 tracking-wide focus:outline-none focus:border-gold/50 transition-colors duration-300";
   const selectCls =
     "w-full appearance-none bg-white border border-sand/60 px-5 py-3.5 pr-10 font-body text-sm text-charcoal tracking-wide cursor-pointer focus:outline-none focus:border-gold/50 transition-colors duration-300";
   const labelCls =
-    "block font-body text-xs tracking-[0.2em] uppercase text-warmgray mb-2";
+    "block font-body text-xs tracking-[0.2em] uppercase text-softblack/70 mb-2";
   const errorCls = "font-body text-xs text-red-500/80 mt-1.5";
 
   return (
@@ -162,7 +162,7 @@ export default function ContactPageClient() {
               <div className="flex items-center gap-3 mb-6">
                 <Link
                   href="/"
-                  className="font-body text-xs tracking-widest uppercase text-warmgray hover:text-gold transition-colors duration-300"
+                  className="font-body text-xs tracking-widest uppercase text-softblack/60 hover:text-gold transition-colors duration-300"
                 >
                   Home
                 </Link>
@@ -177,7 +177,7 @@ export default function ContactPageClient() {
               <h1 className="font-display text-4xl md:text-6xl text-softblack">
                 Contact Us
               </h1>
-              <p className="mt-3 font-body text-sm text-charcoal/55">
+              <p className="mt-3 font-body text-sm text-softblack/75">
                 Serving Jaipur &amp; Gurgaon
               </p>
             </motion.div>
@@ -212,7 +212,7 @@ export default function ContactPageClient() {
                     <div>
                       <label className={labelCls}>Phone *</label>
                       <div className="relative">
-                        <span className="absolute left-5 top-1/2 -translate-y-1/2 font-body text-sm text-warmgray">
+                        <span className="absolute left-5 top-1/2 -translate-y-1/2 font-body text-sm text-softblack/60">
                           +91
                         </span>
                         <input
@@ -251,7 +251,7 @@ export default function ContactPageClient() {
                             onClick={() => updateField("city", c)}
                             className={`px-4 py-2 font-body text-xs tracking-wider uppercase border transition-all duration-300 ${form.city === c
                               ? "bg-gold/20 border-gold text-charcoal"
-                              : "border-sand/60 text-warmgray hover:border-gold/40"
+                              : "border-sand/60 text-softblack/60 hover:border-gold/40"
                               }`}
                           >
                             {c === "Other" ? "Other City" : `${c} Enquiry`}
@@ -349,7 +349,7 @@ export default function ContactPageClient() {
                         onChange={(e) => updateField("consent", e.target.checked)}
                         className="mt-0.5 w-4 h-4 accent-gold cursor-pointer"
                       />
-                      <span className="font-body text-xs text-charcoal/60 leading-relaxed">
+                      <span className="font-body text-xs text-softblack/70 leading-relaxed">
                         I consent to The Green Forms storing my information and
                         contacting me regarding my enquiry. *
                       </span>
@@ -387,7 +387,7 @@ export default function ContactPageClient() {
                     )}
                     {status === "sending" ? "Sending..." : "Send Enquiry"}
                   </button>
-                  <p className="font-body text-xs text-warmgray/60 mt-3">
+                  <p className="font-body text-xs text-softblack/60 mt-3">
                     We&apos;ll never share your details with third parties.
                   </p>
                 </form>
@@ -402,7 +402,7 @@ export default function ContactPageClient() {
               >
                 <div className="border-l border-sand/60 pl-6 space-y-8">
                   <div>
-                    <p className="font-body text-xs tracking-[0.2em] uppercase text-warmgray mb-2">
+                    <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-2">
                       Phone
                     </p>
                     <a
@@ -413,7 +413,7 @@ export default function ContactPageClient() {
                     </a>
                   </div>
                   <div>
-                    <p className="font-body text-xs tracking-[0.2em] uppercase text-warmgray mb-2">
+                    <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-2">
                       Email
                     </p>
                     <a
@@ -424,7 +424,7 @@ export default function ContactPageClient() {
                     </a>
                   </div>
                   <div>
-                    <p className="font-body text-xs tracking-[0.2em] uppercase text-warmgray mb-2">
+                    <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-2">
                       WhatsApp
                     </p>
                     <a
@@ -442,7 +442,7 @@ export default function ContactPageClient() {
                   <p className="font-display text-lg text-softblack mb-3">
                     Prefer a quick chat?
                   </p>
-                  <p className="font-body text-sm text-charcoal/55 leading-relaxed mb-6">
+                  <p className="font-body text-sm text-softblack/75 leading-relaxed mb-6">
                     Reach out on WhatsApp for a faster response. We typically
                     reply within a few hours.
                   </p>
@@ -492,7 +492,7 @@ export default function ContactPageClient() {
 function SelectArrow() {
   return (
     <svg
-      className="absolute right-3 bottom-[18px] w-4 h-4 text-warmgray pointer-events-none"
+      className="absolute right-3 bottom-[18px] w-4 h-4 text-softblack/50 pointer-events-none"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

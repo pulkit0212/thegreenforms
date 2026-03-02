@@ -29,13 +29,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-14 md:gap-8 pb-16 border-b border-white/10">
           {/* Brand */}
           <div>
-            <Link
-              href="/"
-              className="font-display text-2xl text-ivory tracking-wide"
-            >
-              {brand.name}
+            <Link href="/" className="block hover:opacity-80 transition-opacity duration-300">
+              <img
+                src="/logo-light.png"
+                alt={brand.name}
+                className="h-12 w-auto object-contain"
+              />
             </Link>
-            <p className="mt-5 font-body text-sm text-warmgray leading-relaxed max-w-xs">
+            <p className="mt-5 font-body text-sm text-white/70 leading-relaxed max-w-xs">
               Crafting timeless luxury interiors that tell your story. Serving
               clients in {brand.citiesServed.join(" & ")} &amp; beyond.
             </p>
@@ -51,7 +52,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-warmgray hover:text-ivory transition-colors duration-300"
+                    className="font-body text-sm text-white/75 hover:text-gold transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -70,7 +71,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-warmgray hover:text-ivory transition-colors duration-300"
+                    className="font-body text-sm text-white/75 hover:text-gold transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -89,7 +90,7 @@ export default function Footer() {
                 <li key={social.label}>
                   <a
                     href={social.href}
-                    className="font-body text-sm text-warmgray hover:text-ivory transition-colors duration-300"
+                    className="font-body text-sm text-white/75 hover:text-gold transition-colors duration-300"
                   >
                     {social.label}
                   </a>
@@ -100,11 +101,11 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-body text-xs text-warmgray/60">
+          <p className="font-body text-xs text-white/60">
             &copy; {new Date().getFullYear()} {brand.name}. All rights
             reserved.
           </p>
-          <p className="font-body text-xs text-warmgray/40">
+          <p className="font-body text-xs text-white/50">
             Designed with precision and passion.
           </p>
         </div>

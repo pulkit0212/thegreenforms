@@ -29,7 +29,7 @@ export default function CTA() {
               {ctaCopy.heading.split(" ").slice(2).join(" ")}
             </span>
           </h2>
-          <p className="mt-6 md:mt-8 font-body text-base md:text-lg text-charcoal/55 max-w-lg mx-auto leading-relaxed">
+          <p className="mt-6 md:mt-8 font-body text-base md:text-lg text-softblack/80 max-w-lg mx-auto leading-relaxed">
             {ctaCopy.body}
           </p>
           <Link

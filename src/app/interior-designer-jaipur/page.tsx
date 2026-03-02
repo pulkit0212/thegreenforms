@@ -51,7 +51,7 @@ export default function InteriorDesignerJaipur() {
                         <br />
                         <span className="italic text-gold">in Jaipur</span>
                     </h1>
-                    <p className="mt-6 md:mt-8 font-body text-base md:text-lg text-sand/70 max-w-xl mx-auto leading-relaxed">
+                    <p className="mt-6 md:mt-8 font-body text-base md:text-lg text-white/85 max-w-xl mx-auto leading-relaxed">
                         Crafting bespoke interiors that blend Rajasthani heritage with
                         modern sophistication. From opulent villas to premium commercial
                         spaces, we bring your vision to life.
@@ -86,7 +86,7 @@ export default function InteriorDesignerJaipur() {
                     <h2 className="font-display text-3xl md:text-5xl text-ivory mb-6">
                         Let&apos;s Design Your Dream Interior in Jaipur
                     </h2>
-                    <p className="font-body text-base text-sand/60 max-w-lg mx-auto leading-relaxed mb-10">
+                    <p className="font-body text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-10">
                         Whether it&apos;s a heritage haveli renovation or a contemporary
                         apartment, our team delivers luxury interiors tailored to
                         Jaipur&apos;s unique aesthetic.

@@ -36,13 +36,13 @@ export default function Process() {
               }}
               className="relative text-center md:text-left"
             >
-              <span className="font-display text-5xl md:text-6xl text-sand/40 leading-none">
+              <span className="font-display text-5xl md:text-6xl text-gold/30 leading-none">
                 {step.number}
               </span>
               <h3 className="font-display text-lg md:text-xl text-softblack mt-4 mb-3">
                 {step.title}
               </h3>
-              <p className="font-body text-sm text-charcoal/55 leading-relaxed max-w-[260px] mx-auto md:mx-0">
+              <p className="font-body text-sm text-softblack/80 leading-relaxed max-w-[260px] mx-auto md:mx-0">
                 {step.description}
               </p>
             </motion.div>

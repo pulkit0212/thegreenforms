@@ -27,7 +27,7 @@ export default function FAQ() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={1.5}
-                className="w-4 h-4 text-warmgray flex-shrink-0"
+                className="w-4 h-4 text-gold flex-shrink-0"
               >
                 <path d="M6 9l6 6 6-6" />
               </motion.svg>
@@ -41,7 +41,7 @@ export default function FAQ() {
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 pb-5 font-body text-sm text-charcoal/60 leading-relaxed">
+                  <p className="px-6 pb-5 font-body text-sm text-softblack/75 leading-relaxed">
                     {faq.answer}
                   </p>
                 </motion.div>

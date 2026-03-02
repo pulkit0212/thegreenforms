@@ -44,7 +44,7 @@ export default function ProjectsPageClient() {
                             <div className="flex items-center gap-3 mb-6">
                                 <Link
                                     href="/"
-                                    className="font-body text-xs tracking-widest uppercase text-warmgray hover:text-gold transition-colors duration-300"
+                                    className="font-body text-xs tracking-widest uppercase text-softblack/60 hover:text-gold transition-colors duration-300"
                                 >
                                     Home
                                 </Link>
@@ -60,7 +60,7 @@ export default function ProjectsPageClient() {
                             <h1 className="font-display text-4xl md:text-6xl text-softblack">
                                 Projects
                             </h1>
-                            <p className="mt-4 font-body text-base text-charcoal/55 max-w-xl leading-relaxed">
+                            <p className="mt-4 font-body text-base text-softblack/80 max-w-xl leading-relaxed">
                                 A curated collection of spaces where vision meets meticulous
                                 craftsmanship.
                             </p>
@@ -97,10 +97,10 @@ export default function ProjectsPageClient() {
                                 animate={{ opacity: 1 }}
                                 className="text-center py-24"
                             >
-                                <p className="font-display text-2xl text-warmgray mb-3">
+                                <p className="font-display text-2xl text-softblack/60 mb-3">
                                     No projects found
                                 </p>
-                                <p className="font-body text-sm text-warmgray/70">
+                                <p className="font-body text-sm text-softblack/60">
                                     Try adjusting your filters or search query.
                                 </p>
                             </motion.div>

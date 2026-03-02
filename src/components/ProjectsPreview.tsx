@@ -54,7 +54,7 @@ export default function ProjectsPreview() {
                   />
                   <div className="absolute inset-0 bg-softblack/0 group-hover:bg-softblack/20 transition-all duration-700" />
                 </div>
-                <p className="font-body text-xs tracking-[0.25em] uppercase text-warmgray mb-2">
+                <p className="font-body text-xs tracking-[0.25em] uppercase text-forest mb-2">
                   {project.category}
                 </p>
                 <h3 className="font-display text-xl md:text-2xl text-softblack group-hover:text-gold transition-colors duration-500">

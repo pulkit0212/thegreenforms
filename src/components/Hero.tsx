@@ -84,9 +84,11 @@ export default function Hero() {
           <source src="/placeholder-hero.mp4" type="video/mp4" />
         </video>
       ) : (
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${heroPoster})` }}
+        <img
+          src={heroPoster}
+          alt="The Green Edges – luxury interior design"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{ filter: "brightness(1.1) contrast(1.05) saturate(1.05)" }}
         />
       )}
 
@@ -105,7 +107,7 @@ export default function Hero() {
       >
         <motion.p
           variants={fadeUp}
-          className="font-body text-xs md:text-sm tracking-[0.35em] uppercase text-sand/80 mb-6"
+          className="font-body text-xs md:text-sm tracking-[0.35em] uppercase text-white mb-6"
         >
           Luxury Interior Design Studio in {brand.citiesServed.join(" & ")}
         </motion.p>
@@ -123,7 +125,7 @@ export default function Hero() {
 
         <motion.p
           variants={fadeUp}
-          className="mt-6 md:mt-8 font-body text-base md:text-lg text-sand/70 max-w-xl leading-relaxed"
+          className="mt-6 md:mt-8 font-body text-base md:text-lg text-white/85 max-w-xl leading-relaxed"
         >
           {brand.subTagline}
         </motion.p>

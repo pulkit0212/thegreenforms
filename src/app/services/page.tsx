@@ -27,7 +27,7 @@ export default function ServicesPage() {
                         Our
                         <span className="italic text-gold"> Services</span>
                     </h1>
-                    <p className="mt-6 font-body text-base text-sand/70 max-w-xl mx-auto leading-relaxed">
+                    <p className="mt-6 font-body text-base text-white/85 max-w-xl mx-auto leading-relaxed">
                         Comprehensive design solutions tailored to create extraordinary
                         spaces for discerning clients.
                     </p>
@@ -43,13 +43,13 @@ export default function ServicesPage() {
                             className="grid md:grid-cols-2 gap-8 md:gap-16 items-start"
                         >
                             <div>
-                                <span className="font-display text-5xl text-sand/30 leading-none">
+                                <span className="font-display text-5xl text-gold/30 leading-none">
                                     {String(i + 1).padStart(2, "0")}
                                 </span>
                                 <h2 className="font-display text-2xl md:text-3xl text-softblack mt-3 mb-4">
                                     {service.title}
                                 </h2>
-                                <p className="font-body text-base text-charcoal/60 leading-relaxed">
+                                <p className="font-body text-base text-softblack/75 leading-relaxed">
                                     {service.shortDesc}
                                 </p>
                             </div>
@@ -57,7 +57,7 @@ export default function ServicesPage() {
                                 {service.bullets.map((bullet) => (
                                     <li
                                         key={bullet}
-                                        className="flex items-start gap-3 font-body text-sm text-charcoal/70"
+                                        className="flex items-start gap-3 font-body text-sm text-softblack/80"
                                     >
                                         <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
                                         {bullet}
@@ -78,7 +78,7 @@ export default function ServicesPage() {
                     <h2 className="font-display text-3xl md:text-5xl text-ivory mb-6">
                         Ready to Transform Your Space?
                     </h2>
-                    <p className="font-body text-base text-sand/60 max-w-lg mx-auto leading-relaxed mb-10">
+                    <p className="font-body text-base text-white/80 max-w-lg mx-auto leading-relaxed mb-10">
                         Book a complimentary 30-minute consultation to discuss your vision.
                     </p>
                     <Link

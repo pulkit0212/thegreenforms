@@ -40,13 +40,13 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
 
         <div className="flex items-center gap-3 mb-2">
-          <p className="font-body text-xs tracking-[0.25em] uppercase text-warmgray">
+          <p className="font-body text-xs tracking-[0.25em] uppercase text-forest">
             {project.category}
           </p>
           {project.location && (
             <>
               <span className="w-px h-3 bg-sand" />
-              <p className="font-body text-xs text-warmgray/70">
+              <p className="font-body text-xs text-softblack/70">
                 {project.location}
               </p>
             </>

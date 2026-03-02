@@ -16,6 +16,7 @@ const config: Config = {
         charcoal: "#2C2C2C",
         softblack: "#1A1A1A",
         gold: "#C5A572",
+        forest: "#2D5A27",
       },
       fontFamily: {
         display: ["var(--font-playfair)", '"Playfair Display"', "serif"],

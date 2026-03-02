@@ -43,7 +43,7 @@ export default function Testimonials() {
                 <p className="font-body text-sm text-ivory/90 tracking-wide">
                   {testimonial.author}
                 </p>
-                <p className="font-body text-xs text-warmgray mt-1">
+                <p className="font-body text-xs text-gold mt-1">
                   {testimonial.location}
                 </p>
               </div>

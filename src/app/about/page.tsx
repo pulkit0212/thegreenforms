@@ -38,7 +38,7 @@ export default function AboutPage() {
                     {aboutStory.split("\n\n").map((paragraph, i) => (
                         <p
                             key={i}
-                            className="font-body text-base md:text-lg text-charcoal/70 leading-relaxed mb-6 last:mb-0"
+                            className="font-body text-base md:text-lg text-softblack/80 leading-relaxed mb-6 last:mb-0"
                         >
                             {paragraph}
                         </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
                                 <h3 className="font-display text-lg text-softblack mb-3">
                                     {item.title}
                                 </h3>
-                                <p className="font-body text-sm text-charcoal/60 leading-relaxed">
+                                <p className="font-body text-sm text-softblack/75 leading-relaxed">
                                     {item.description}
                                 </p>
                             </div>

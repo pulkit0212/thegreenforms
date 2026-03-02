@@ -44,7 +44,6 @@ export default function Navbar() {
     ? "bg-black/12 backdrop-blur-md border-b border-white/12"
     : "bg-cream/95 backdrop-blur-md shadow-sm";
 
-  const logoColor = isHeroState ? "text-ivory" : "text-softblack";
   const linkColor = isHeroState
     ? "text-white/90 hover:text-white"
     : "text-charcoal/80 hover:text-softblack";
@@ -63,12 +62,12 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${navBg}`}
       >
         <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-12 py-5">
-          <Link
-            href="/"
-            className={`font-display text-2xl tracking-wide transition-colors duration-500 ${logoColor}`}
-            style={textShadowStyle}
-          >
-            The Green Forms
+          <Link href="/" className="block transition-opacity duration-500 hover:opacity-80">
+            <img
+              src={isHeroState ? "/logo-light.png" : "/logo.png"}
+              alt="The Green Forms"
+              className="h-12 w-auto object-contain transition-all duration-500"
+            />
           </Link>
 
           <ul className="hidden md:flex items-center gap-10">

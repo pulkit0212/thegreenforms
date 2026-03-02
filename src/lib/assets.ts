@@ -23,4 +23,4 @@ export function getProjectGallery(index: number, count = 5): string[] {
 }
 
 /** Hero poster fallback */
-export const heroPoster = `${PLACEHOLDER_DIR}/hero-poster.svg`;
+export const heroPoster = `/placeholder-hero.jpg`;

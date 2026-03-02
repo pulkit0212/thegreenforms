@@ -64,7 +64,7 @@ export default function Home() {
                 <p className="font-display text-3xl md:text-4xl text-gold mb-2">
                   {stat.value}
                 </p>
-                <p className="font-body text-xs tracking-[0.2em] uppercase text-sand/60">
+                <p className="font-body text-xs tracking-[0.2em] uppercase text-forest">
                   {stat.label}
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default function Home() {
                 <h3 className="font-display text-lg text-softblack mb-3">
                   {item.title}
                 </h3>
-                <p className="font-body text-sm text-charcoal/60 leading-relaxed">
+                <p className="font-body text-sm text-softblack/75 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -125,13 +125,13 @@ export default function Home() {
                 href={card.href}
                 className="group block p-10 md:p-12 bg-white/60 border border-sand/40 hover:border-gold/30 transition-all duration-500"
               >
-                <p className="font-body text-xs tracking-[0.25em] uppercase text-warmgray mb-3">
+                <p className="font-body text-xs tracking-[0.25em] uppercase text-forest mb-3">
                   {card.state}
                 </p>
                 <h3 className="font-display text-2xl md:text-3xl text-softblack mb-4 group-hover:text-gold transition-colors duration-300">
                   Interior Designer in {card.city}
                 </h3>
-                <p className="font-body text-sm text-charcoal/60 leading-relaxed mb-6">
+                <p className="font-body text-sm text-softblack/75 leading-relaxed mb-6">
                   {card.desc}
                 </p>
                 <span className="font-body text-sm tracking-widest uppercase text-gold">

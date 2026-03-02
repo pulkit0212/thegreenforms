@@ -47,7 +47,7 @@ export default function ProjectFilters({
             ))}
           </select>
           <svg
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-warmgray pointer-events-none"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-softblack/50 pointer-events-none"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -60,7 +60,7 @@ export default function ProjectFilters({
         {/* Search input */}
         <div className="relative flex-1 max-w-md">
           <svg
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-warmgray pointer-events-none"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-softblack/50 pointer-events-none"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -74,7 +74,7 @@ export default function ProjectFilters({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search projects..."
-            className="w-full bg-white border border-sand/60 pl-11 pr-5 py-3 font-body text-sm text-charcoal placeholder:text-warmgray/60 tracking-wide focus:outline-none focus:border-gold/50 transition-colors duration-300"
+            className="w-full bg-white border border-sand/60 pl-11 pr-5 py-3 font-body text-sm text-softblack placeholder:text-softblack/40 tracking-wide focus:outline-none focus:border-gold/50 transition-colors duration-300"
           />
         </div>
       </div>
@@ -87,11 +87,10 @@ export default function ProjectFilters({
             <button
               key={tag}
               onClick={() => onTagToggle(tag)}
-              className={`px-4 py-1.5 font-body text-xs tracking-wider uppercase border transition-all duration-300 ${
-                isActive
+              className={`px-4 py-1.5 font-body text-xs tracking-wider uppercase border transition-all duration-300 ${isActive
                   ? "bg-softblack text-ivory border-softblack"
-                  : "bg-transparent text-warmgray border-sand/50 hover:border-charcoal/30 hover:text-charcoal"
-              }`}
+                  : "bg-transparent text-softblack/60 border-sand/50 hover:border-charcoal/30 hover:text-softblack"
+                }`}
             >
               {tag}
             </button>

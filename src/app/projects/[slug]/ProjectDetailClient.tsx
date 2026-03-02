@@ -139,7 +139,7 @@ export default function ProjectDetailClient({
                 <h2 className="font-display text-2xl md:text-3xl text-softblack mb-8">
                   About the Project
                 </h2>
-                <p className="font-body text-base md:text-lg text-charcoal/70 leading-[1.9] whitespace-pre-line">
+                <p className="font-body text-base md:text-lg text-softblack/80 leading-[1.9] whitespace-pre-line">
                   {project.description}
                 </p>
               </motion.div>
@@ -160,7 +160,7 @@ export default function ProjectDetailClient({
                 <div className="space-y-6 border-l border-sand/60 pl-6">
                   {project.location && (
                     <div>
-                      <p className="font-body text-xs tracking-[0.2em] uppercase text-warmgray mb-1">
+                      <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-1">
                         Location
                       </p>
                       <p className="font-body text-sm text-charcoal">
@@ -170,7 +170,7 @@ export default function ProjectDetailClient({
                   )}
                   {project.year && (
                     <div>
-                      <p className="font-body text-xs tracking-[0.2em] uppercase text-warmgray mb-1">
+                      <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-1">
                         Year
                       </p>
                       <p className="font-body text-sm text-charcoal">
@@ -190,14 +190,14 @@ export default function ProjectDetailClient({
 
                 {/* Tags */}
                 <div>
-                  <p className="font-body text-xs tracking-[0.2em] uppercase text-warmgray mb-4">
+                  <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-4">
                     Tags
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-4 py-1.5 font-body text-xs tracking-wider uppercase border border-sand/50 text-warmgray"
+                        className="px-4 py-1.5 font-body text-xs tracking-wider uppercase border border-sand/50 text-softblack/70"
                       >
                         {tag}
                       </span>

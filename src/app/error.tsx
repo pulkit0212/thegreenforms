@@ -21,7 +21,7 @@ export default function Error({
             <h1 className="font-display text-5xl md:text-7xl text-softblack mb-6">
                 Oops
             </h1>
-            <p className="font-body text-base text-charcoal/60 max-w-md leading-relaxed mb-10">
+            <p className="font-body text-base text-softblack/75 max-w-md leading-relaxed mb-10">
                 An unexpected error occurred. Please try again or return to our
                 homepage.
             </p>
