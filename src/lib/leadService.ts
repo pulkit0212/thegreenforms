@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import type { Lead } from "@/types/lead";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function sanitize(val: string | undefined): string {
   if (!val) return "—";
   return val.replace(/[<>]/g, "");
@@ -38,20 +36,17 @@ Sent from The Green Forms website
 }
 
 export async function sendLeadEmail(lead: Lead): Promise<{ success: boolean; error?: string }> {
-  const ownerEmail = process.env.OWNER_EMAIL;
-  if (!ownerEmail) {
-    console.error("[leadService] OWNER_EMAIL is not configured");
-    return { success: false, error: "Server configuration error" };
-  }
-
   const subject = `New Enquiry — ${lead.name} | ${lead.service} | ${lead.budget}`;
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const { error } = await resend.emails.send({
-      from: "Website Enquiry <onboarding@resend.dev>",
-      to: [ownerEmail],
+      from: "The GreenForms <hello@thegreenforms.com>",
+      to: ["uccvib@gmail.com"],
       subject,
       text: formatEmailBody(lead),
+      ...(lead.email ? { reply_to: lead.email } : {}),
     });
 
     if (error) {
