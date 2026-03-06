@@ -1,5 +1,5 @@
 import { createClient, type SanityClient } from "next-sanity";
-import { apiVersion, dataset, projectId, isSanityConfigured } from "../env";
+import { apiVersion, dataset, projectId, isSanityConfigured } from "@/sanity/env";
 
 /**
  * Sanity Client

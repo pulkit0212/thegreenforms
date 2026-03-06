@@ -48,3 +48,10 @@ export const projectBySlugQuery = groq`
 export const allProjectSlugsQuery = groq`
   *[_type == "project"] { "slug": slug.current }
 `;
+
+/** Similar projects (logic: same category OR shared tags) */
+export const similarProjectsQuery = groq`
+  *[_type == "project" && slug.current != $currentSlug && (category == $category || count(tags[@ in $tags]) > 0)] | order(featured desc, sortOrder asc) [0...$limit] {
+    ${projectFields}
+  }
+`;

@@ -4,13 +4,14 @@
  * Fetches projects from Sanity CMS with automatic fallback
  * to static data when Sanity returns empty or is not configured.
  */
-import { getClient } from "@/sanity/lib/client";
+import { getClient } from "@/lib/sanityClient";
 import {
     allProjectsQuery,
     featuredProjectsQuery,
     projectBySlugQuery,
     allProjectSlugsQuery,
-} from "@/sanity/lib/queries";
+    similarProjectsQuery,
+} from "@/lib/sanityQueries";
 import {
     projects as staticProjects,
     Project,
@@ -121,5 +122,31 @@ export async function getAllProjectSlugs(): Promise<string[]> {
     } catch (err) {
         console.error("[getProjects] Sanity slugs fetch failed:", err);
         return staticProjects.map((p) => p.slug);
+    }
+}
+
+/** Similar projects (fetch from CMS) */
+export async function getSimilarProjectsFromCMS(
+    project: Project,
+    limit: number = 3
+): Promise<Project[]> {
+    if (!isSanityConfigured()) {
+        return staticProjects.filter(p => p.category === project.category && p.slug !== project.slug).slice(0, limit);
+    }
+
+    const client = getClient();
+    if (!client) return [];
+
+    try {
+        const docs = await client.fetch(similarProjectsQuery, {
+            currentSlug: project.slug,
+            category: project.category,
+            tags: project.tags,
+            limit,
+        });
+        return (docs || []).map(normaliseSanityProject);
+    } catch (err) {
+        console.error("[getSimilarProjects] Sanity fetch failed:", err);
+        return [];
     }
 }
