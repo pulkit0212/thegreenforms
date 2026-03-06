@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SeoJsonLd from "@/components/SeoJsonLd";
+import { getFeaturedProjectsFromCMS } from "@/lib/getProjects";
 
 export const metadata: Metadata = buildMetadata({
     title: "Luxury Interior Designer in Gurgaon",
@@ -32,7 +33,8 @@ const localBusinessSchema = {
     priceRange: "₹₹₹₹",
 };
 
-export default function InteriorDesignerGurgaon() {
+export default async function InteriorDesignerGurgaon() {
+    const featured = await getFeaturedProjectsFromCMS();
     return (
         <main>
             <SeoJsonLd data={localBusinessSchema} />
@@ -73,7 +75,7 @@ export default function InteriorDesignerGurgaon() {
             </section>
 
             <Services />
-            <ProjectsPreview />
+            <ProjectsPreview projects={featured} />
             <Testimonials />
 
             {/* City-specific CTA */}

@@ -1,15 +1,9 @@
 import { MetadataRoute } from "next";
-import { projects } from "@/data/projects";
+import { getAllProjects } from "@/lib/getProjects";
 
-/**
- * Sitemap Generation
- * ──────────────────
- * Generates the sitemap.xml for the website.
- * Includes all static pages and dynamic project detail pages.
- */
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://thegreenforms.com";
+const BASE_URL = "https://thegreenforms.com";
 
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Static routes
     const routes = [
         "",
@@ -23,15 +17,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     const staticPages: MetadataRoute.Sitemap = routes.map((route) => ({
-        url: `${baseUrl}${route}`,
+        url: `${BASE_URL}${route}`,
         lastModified: new Date(),
         changeFrequency: route === "" ? "weekly" : "monthly",
         priority: route === "" ? 1 : 0.8,
     }));
 
-    // Dynamic project pages
-    const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
-        url: `${baseUrl}/projects/${project.slug}`,
+    // Dynamic project pages (from Sanity or static fallback)
+    const projects = await getAllProjects();
+    const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
+        url: `${BASE_URL}/projects/${p.slug}`,
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.7,

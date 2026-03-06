@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import SeoJsonLd from "@/components/SeoJsonLd";
 import { SITE_URL } from "@/lib/seo";
 import { stats, whyUs, cityCards, brand } from "@/data/siteContent";
+import { getFeaturedProjectsFromCMS } from "@/lib/getProjects";
 
 export const metadata: Metadata = {
   title: `Luxury Interior Designer in ${brand.citiesServed.join(" & ")} | ${brand.name}`,
@@ -47,7 +48,8 @@ const localBusinessSchema = {
   sameAs: [],
 };
 
-export default function Home() {
+export default async function Home() {
+  const featured = await getFeaturedProjectsFromCMS();
   return (
     <main>
       <SeoJsonLd data={localBusinessSchema} />
@@ -73,7 +75,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ProjectsPreview />
+      <ProjectsPreview projects={featured} />
 
       {/* Why Us */}
       <section className="py-20 md:py-28 bg-ivory">

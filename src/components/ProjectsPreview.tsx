@@ -3,12 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { projects } from "@/data/projects";
-import { getFeaturedProjects } from "@/lib/projectUtils";
+import { Project } from "@/data/projects";
 
-const featured = getFeaturedProjects(projects);
+interface Props {
+  projects: Project[];
+}
 
-export default function ProjectsPreview() {
+export default function ProjectsPreview({ projects }: Props) {
   return (
     <section id="projects" className="py-28 md:py-36 bg-ivory">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
@@ -28,7 +29,7 @@ export default function ProjectsPreview() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {featured.map((project, i) => (
+          {projects.map((project, i) => (
             <motion.div
               key={project.slug}
               initial={{ opacity: 0, y: 60 }}

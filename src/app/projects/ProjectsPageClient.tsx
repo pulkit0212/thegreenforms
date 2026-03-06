@@ -3,24 +3,27 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { projects } from "@/data/projects";
-import { ProjectCategory } from "@/data/projects";
+import { Project, ProjectCategory } from "@/data/projects";
 import { filterProjects, getAllTags } from "@/lib/projectUtils";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectFilters from "@/components/ProjectFilters";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function ProjectsPageClient() {
+interface Props {
+    projects: Project[];
+}
+
+export default function ProjectsPageClient({ projects }: Props) {
     const [category, setCategory] = useState<ProjectCategory | "All">("All");
     const [search, setSearch] = useState("");
     const [activeTags, setActiveTags] = useState<string[]>([]);
 
-    const allTags = useMemo(() => getAllTags(projects), []);
+    const allTags = useMemo(() => getAllTags(projects), [projects]);
 
     const filtered = useMemo(
         () => filterProjects(projects, category, search, activeTags),
-        [category, search, activeTags]
+        [projects, category, search, activeTags]
     );
 
     const handleTagToggle = (tag: string) => {
