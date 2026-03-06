@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -11,6 +12,8 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -24,15 +27,21 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     >
       <Link href={`/projects/${project.slug}`} className="group block">
         <div className="relative overflow-hidden aspect-[3/4] mb-5">
+          {/* Skeleton shimmer — visible until image loads */}
+          {!imageLoaded && (
+            <div className="absolute inset-0 skeleton-shimmer z-[1]" />
+          )}
           <Image
             src={project.coverImage}
             alt={project.title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+            className={`object-cover transition-all duration-700 ease-out group-hover:scale-105 ${imageLoaded ? "opacity-100" : "opacity-0"
+              }`}
+            onLoad={() => setImageLoaded(true)}
           />
-          <div className="absolute inset-0 bg-softblack/0 group-hover:bg-softblack/20 transition-all duration-700" />
-          <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-softblack/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-0 bg-softblack/0 group-hover:bg-softblack/20 transition-all duration-700 z-[2]" />
+          <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-softblack/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[3]">
             <p className="font-body text-xs text-ivory/80 leading-relaxed line-clamp-2">
               {project.shortDesc}
             </p>

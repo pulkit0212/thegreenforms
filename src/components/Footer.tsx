@@ -31,9 +31,9 @@ export default function Footer() {
           <div>
             <Link href="/" className="block hover:opacity-80 transition-opacity duration-300">
               <img
-                src="/logo-light.png"
+                src="/logo-light.svg"
                 alt={brand.name}
-                className="h-12 w-auto object-contain"
+                className="h-10 md:h-12 w-auto object-contain"
               />
             </Link>
             <p className="mt-5 font-body text-sm text-white/70 leading-relaxed max-w-xs">
@@ -105,6 +105,20 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {brand.name}. All rights
             reserved.
           </p>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/privacy"
+              className="font-body text-xs text-white/50 hover:text-gold transition-colors duration-300"
+            >
+              Privacy Policy
+            </Link>
+            <a
+              href="/sitemap.xml"
+              className="font-body text-xs text-white/50 hover:text-gold transition-colors duration-300"
+            >
+              Sitemap
+            </a>
+          </div>
           <p className="font-body text-xs text-white/50">
             Designed with precision and passion.
           </p>

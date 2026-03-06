@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 50" fill="none">
+  <!-- Leaf accent -->
+  <g transform="translate(0, 8)">
+    <path d="M18 28 C14 20, 8 14, 2 10 C8 10, 16 14, 22 22" stroke="#A8C6A0" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M10 18 C8 15, 5 13, 2 12 C5 12, 8 14, 11 17" stroke="#A8C6A0" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+    <path d="M14 23 C11 19, 7 16, 4 14 C7 14, 11 17, 15 21" stroke="#A8C6A0" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- "The" text -->
+  <text x="30" y="20" font-family="'Playfair Display', Georgia, serif" font-size="12" font-weight="400" letter-spacing="3" fill="#FFFFF0" text-transform="uppercase">THE</text>
+  <!-- "Green Forms" text -->
+  <text x="30" y="42" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="400" font-style="italic" fill="#FFFFF0">Green Forms</text>
+  <!-- Gold underline flourish -->
+  <path d="M30 46 Q130 52, 210 46" stroke="#C5A572" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+</svg>

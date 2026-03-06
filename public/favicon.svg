@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#1A1A1A"/>
+  <!-- Stylised leaf -->
+  <g transform="translate(256,256)">
+    <!-- Main leaf shape -->
+    <path d="M-20 100 C-20 100, -80 20, -60 -80 C-40 -140, 40 -140, 60 -80 C80 20, 20 100, 20 100 C10 120, -10 120, -20 100Z"
+          fill="#2D5A27" opacity="0.95"/>
+    <!-- Leaf vein center -->
+    <line x1="0" y1="-120" x2="0" y2="100" stroke="#C5A572" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <!-- Leaf veins left -->
+    <line x1="0" y1="-60" x2="-35" y2="-30" stroke="#C5A572" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="0" y1="-20" x2="-40" y2="15" stroke="#C5A572" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="0" y1="20" x2="-35" y2="55" stroke="#C5A572" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <!-- Leaf veins right -->
+    <line x1="0" y1="-60" x2="35" y2="-30" stroke="#C5A572" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="0" y1="-20" x2="40" y2="15" stroke="#C5A572" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <line x1="0" y1="20" x2="35" y2="55" stroke="#C5A572" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <!-- "TGF" monogram text -->
+  <text x="256" y="460" text-anchor="middle" fill="#C5A572" font-family="serif" font-size="48" font-weight="600" letter-spacing="12" opacity="0.8">TGF</text>
+</svg>

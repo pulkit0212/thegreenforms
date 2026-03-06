@@ -1,16 +1,16 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://thegreenedges.com";
-
+/**
+ * Robots.txt Generation
+ * ─────────────────────
+ * Configures search engine crawling behavior.
+ */
 export default function robots(): MetadataRoute.Robots {
     return {
-        rules: [
-            {
-                userAgent: "*",
-                allow: "/",
-            },
-        ],
-        sitemap: `${SITE_URL}/sitemap.xml`,
+        rules: {
+            userAgent: "*",
+            allow: "/",
+        },
+        sitemap: "https://thegreenforms.com/sitemap.xml",
     };
 }

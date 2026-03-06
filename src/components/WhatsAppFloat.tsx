@@ -2,20 +2,20 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const WHATSAPP_NUMBER = "918209886849";
-
-const defaultMessage = encodeURIComponent(
-  "Hello, I'm interested in your interior design services."
-);
-
-const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${defaultMessage}`;
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { trackEvent } from "@/lib/analytics";
 
 export default function WhatsAppFloat() {
   const [tooltip, setTooltip] = useState(false);
 
+  const whatsappUrl = buildWhatsAppUrl({ source: "FloatButton" });
+
+  const handleClick = () => {
+    trackEvent("whatsapp_click", { source: "FloatButton" });
+  };
+
   return (
-    <div className="fixed bottom-6 right-6 z-[60]">
+    <div className="fixed bottom-6 right-6 z-[60] hidden md:block">
       <AnimatePresence>
         {tooltip && (
           <motion.div
@@ -35,6 +35,7 @@ export default function WhatsAppFloat() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={handleClick}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 2, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}

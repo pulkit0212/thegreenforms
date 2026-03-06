@@ -64,9 +64,9 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-12 py-5">
           <Link href="/" className="block transition-opacity duration-500 hover:opacity-80">
             <img
-              src={isHeroState ? "/logo-light.png" : "/logo.png"}
+              src={isHeroState ? "/logo-light.svg" : "/logo.svg"}
               alt="The Green Forms"
-              className="h-12 w-auto object-contain transition-all duration-500"
+              className="h-10 md:h-12 w-auto object-contain transition-all duration-500"
             />
           </Link>
 

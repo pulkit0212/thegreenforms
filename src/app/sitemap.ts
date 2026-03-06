@@ -1,59 +1,39 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
-const SITE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://thegreenedges.com";
-
+/**
+ * Sitemap Generation
+ * ──────────────────
+ * Generates the sitemap.xml for the website.
+ * Includes all static pages and dynamic project detail pages.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticPages: MetadataRoute.Sitemap = [
-        {
-            url: SITE_URL,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 1,
-        },
-        {
-            url: `${SITE_URL}/projects`,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 0.9,
-        },
-        {
-            url: `${SITE_URL}/services`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_URL}/about`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-        {
-            url: `${SITE_URL}/contact`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_URL}/interior-designer-jaipur`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.9,
-        },
-        {
-            url: `${SITE_URL}/interior-designer-gurgaon`,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 0.9,
-        },
+    const baseUrl = "https://thegreenforms.com";
+
+    // Static routes
+    const routes = [
+        "",
+        "/projects",
+        "/contact",
+        "/about",
+        "/services",
+        "/interior-designer-jaipur",
+        "/interior-designer-gurgaon",
+        "/privacy",
     ];
 
-    const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
-        url: `${SITE_URL}/projects/${p.slug}`,
+    const staticPages: MetadataRoute.Sitemap = routes.map((route) => ({
+        url: `${baseUrl}${route}`,
         lastModified: new Date(),
-        changeFrequency: "monthly" as const,
+        changeFrequency: route === "" ? "weekly" : "monthly",
+        priority: route === "" ? 1 : 0.8,
+    }));
+
+    // Dynamic project pages
+    const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+        url: `${baseUrl}/projects/${project.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
         priority: 0.7,
     }));
 

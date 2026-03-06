@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const SITE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://thegreenedges.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://thegreenforms.com";
 
 export const BRAND = "The Green Forms";
 

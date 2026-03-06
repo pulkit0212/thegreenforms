@@ -25,6 +25,7 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [showVideo, setShowVideo] = useState(true);
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   useEffect(() => {
     /* ── Reduced motion / saveData / small mobile → poster only ── */
@@ -49,6 +50,9 @@ export default function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
+    const handlePlaying = () => setVideoPlaying(true);
+    video.addEventListener("playing", handlePlaying);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -61,7 +65,10 @@ export default function Hero() {
     );
 
     observer.observe(video);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("playing", handlePlaying);
+    };
   }, []);
 
   return (
@@ -71,18 +78,29 @@ export default function Hero() {
     >
       {/* Layer 1: Video or Poster */}
       {showVideo ? (
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={heroPoster}
-          className="absolute inset-0 w-full h-full object-cover opacity-75 z-0"
-          style={{ filter: "brightness(1.1) contrast(1.05) saturate(1.05)" }}
-        >
-          <source src="/placeholder-hero.mp4" type="video/mp4" />
-        </video>
+        <>
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={heroPoster}
+            className="absolute inset-0 w-full h-full object-cover opacity-75 z-0"
+            style={{ filter: "brightness(1.1) contrast(1.05) saturate(1.05)" }}
+          >
+            <source src="/placeholder-hero.mp4" type="video/mp4" />
+          </video>
+          {/* Poster overlay — stays visible until video actually starts playing */}
+          <img
+            src={heroPoster}
+            alt=""
+            aria-hidden="true"
+            className={`absolute inset-0 w-full h-full object-cover z-[1] transition-opacity duration-1000 ease-out ${videoPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
+            style={{ filter: "brightness(1.1) contrast(1.05) saturate(1.05)" }}
+          />
+        </>
       ) : (
         <img
           src={heroPoster}

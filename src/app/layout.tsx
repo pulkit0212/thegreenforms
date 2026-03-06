@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import MobileStickyBar from "@/components/MobileStickyBar";
+import DesktopFloatingCTA from "@/components/DesktopFloatingCTA";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 /* ── Fonts ── */
 const playfair = Playfair_Display({
@@ -20,7 +24,7 @@ const inter = Inter({
 });
 
 /* ── Metadata ── */
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://thegreenedges.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://thegreenforms.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -63,8 +67,17 @@ export const metadata: Metadata = {
     images: ["/placeholder-hero.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
+  manifest: "/site.webmanifest",
   other: {
     "theme-color": "#1A1A1A",
   },
@@ -77,9 +90,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased pb-[72px] md:pb-0">
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         {children}
         <WhatsAppFloat />
+        <MobileStickyBar />
+        <DesktopFloatingCTA />
       </body>
     </html>
   );

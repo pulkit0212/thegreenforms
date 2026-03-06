@@ -16,6 +16,7 @@ import {
   discoveryOptions,
 } from "@/lib/validators";
 import type { LeadSource } from "@/types/lead";
+import { trackEvent } from "@/lib/analytics";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -122,12 +123,12 @@ export default function ContactPageClient() {
         "success"
       );
 
-      // Analytics-ready event for future GA / tracking integration
-      window.dispatchEvent(
-        new CustomEvent("lead_submitted", {
-          detail: { source: sourceParam },
-        })
-      );
+      // GA4 conversion tracking
+      trackEvent("form_submit", {
+        source: sourceParam,
+        city: parsed.data.city || "",
+        service: parsed.data.service || "",
+      });
 
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {

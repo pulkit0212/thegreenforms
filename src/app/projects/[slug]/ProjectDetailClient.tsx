@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectGallery from "@/components/ProjectGallery";
 import SimilarProjects from "@/components/SimilarProjects";
+import ProjectQuoteCTA from "@/components/ProjectQuoteCTA";
 
 interface Props {
   project: Project;
@@ -246,6 +247,14 @@ export default function ProjectDetailClient({
             <ProjectGallery images={project.images} title={project.title} />
           </div>
         </section>
+
+        {/* Quote CTA */}
+        <ProjectQuoteCTA
+          projectTitle={project.title}
+          projectSlug={project.slug}
+          city={project.location}
+          service={project.category}
+        />
 
         {/* Similar */}
         <SimilarProjects projects={similarProjects} />
