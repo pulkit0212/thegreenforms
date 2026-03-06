@@ -110,11 +110,11 @@ export default function PrivacyPage() {
                                     You may request access to, correction of, or deletion of any
                                     personal data we hold about you by contacting us at{" "}
                                     <a
-                                        href={`mailto:${"uccvib@gmail.com"
+                                        href={`mailto:${"thegeenforms@gmail.com"
                                             }`}
                                         className="text-gold hover:underline"
                                     >
-                                        uccvib@gmail.com
+                                        thegeenforms@gmail.com
                                     </a>
                                     .
                                 </p>
@@ -127,10 +127,10 @@ export default function PrivacyPage() {
                                 <p className="font-body text-sm text-softblack/80 leading-relaxed">
                                     For any privacy-related questions, please reach out to us at{" "}
                                     <a
-                                        href={`mailto:${"uccvib@gmail.com"}`}
+                                        href={`mailto:${"thegeenforms@gmail.com"}`}
                                         className="text-gold hover:underline"
                                     >
-                                        uccvib@gmail.com
+                                        thegeenforms@gmail.com
                                     </a>{" "}
                                     or call{" "}
                                     <a

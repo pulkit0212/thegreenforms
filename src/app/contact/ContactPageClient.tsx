@@ -418,10 +418,10 @@ export default function ContactPageClient() {
                       Email
                     </p>
                     <a
-                      href="mailto:uccvib@gmail.com"
+                      href="mailto:thegeenforms@gmail.com"
                       className="font-body text-base text-charcoal hover:text-gold transition-colors duration-300"
                     >
-                      uccvib@gmail.com
+                      thegeenforms@gmail.com
                     </a>
                   </div>
                   <div>

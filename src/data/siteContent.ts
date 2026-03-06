@@ -13,7 +13,7 @@ export const brand = {
         "Premium interior design for homes and commercial spaces in Jaipur & Gurgaon. Sophistication meets comfort.",
     citiesServed: ["Jaipur", "Gurgaon"] as const,
     phone: "+91 8209886849",
-    email: "uccvib@gmail.com",
+    email: "thegeenforms@gmail.com",
     whatsappNumber: "918209886849",
     socialLinks: {
         instagram: "#",

@@ -43,7 +43,7 @@ export async function sendLeadEmail(lead: Lead): Promise<{ success: boolean; err
 
     const { error } = await resend.emails.send({
       from: "The GreenForms <hello@thegreenforms.com>",
-      to: ["uccvib@gmail.com"],
+      to: ["thegeenforms@gmail.com"],
       subject,
       text: formatEmailBody(lead),
       ...(lead.email ? { reply_to: lead.email } : {}),

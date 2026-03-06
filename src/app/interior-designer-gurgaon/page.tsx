@@ -25,7 +25,7 @@ const localBusinessSchema = {
     description:
         "Premium luxury interior design studio serving Gurgaon, Haryana and Delhi NCR. Bespoke residential and commercial interiors.",
     telephone: "+918209886849",
-    email: "uccvib@gmail.com",
+    email: "thegeenforms@gmail.com",
     areaServed: [
         { "@type": "City", name: "Gurgaon" },
         { "@type": "Place", name: "Delhi NCR" },

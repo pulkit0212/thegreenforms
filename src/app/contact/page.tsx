@@ -22,7 +22,7 @@ const contactSchema = {
     "@type": "Organization",
     name: "The Green Forms",
     telephone: "+918209886849",
-    email: "uccvib@gmail.com",
+    email: "thegeenforms@gmail.com",
     url: SITE_URL,
     areaServed: [
       { "@type": "City", name: "Jaipur" },
