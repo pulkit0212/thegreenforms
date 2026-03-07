@@ -10,7 +10,10 @@ export const metadata: Metadata = buildMetadata({
   path: "/projects",
 });
 
+export const revalidate = 60;
+
 export default async function ProjectsPage() {
   const projects = await getAllProjects();
+  console.log(`[ProjectsPage] Fetched ${projects.length} projects from data layer`);
   return <ProjectsPageClient projects={projects} />;
 }

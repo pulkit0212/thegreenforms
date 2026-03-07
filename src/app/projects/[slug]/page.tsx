@@ -10,6 +10,9 @@ interface PageProps {
   params: { slug: string };
 }
 
+export const revalidate = 60;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const projects = await getAllProjects();
   return projects.map((p) => ({ slug: p.slug }));

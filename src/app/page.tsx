@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
 };
 
+export const revalidate = 60;
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",

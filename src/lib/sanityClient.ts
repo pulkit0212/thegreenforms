@@ -17,7 +17,7 @@ export function getClient(): SanityClient | null {
             projectId,
             dataset,
             apiVersion,
-            useCdn: true,
+            useCdn: false,
         });
     }
     return _client;
@@ -25,5 +25,5 @@ export function getClient(): SanityClient | null {
 
 /** Legacy export for backward compatibility */
 export const client = isSanityConfigured()
-    ? createClient({ projectId, dataset, apiVersion, useCdn: true })
+    ? createClient({ projectId, dataset, apiVersion, useCdn: false })
     : (null as unknown as SanityClient);
